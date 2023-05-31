@@ -3,6 +3,38 @@
 
 #define XXX &none
 
+// Cross-hand positional home-row mods
+#define LHM(MOD, TAP) &lhm MOD TAP
+#define RHM(MOD, TAP) &rhm MOD TAP
+
+#define _CORNE_ALPHA_TOP_LEFT 1 2 3 4 5
+#define _CORNE_ALPHA_TOP_RIGHT 6 7 8 9 10
+#define _CORNE_ALPHA_MID_LEFT 13 14 15 16 17
+#define _CORNE_ALPHA_MID_RIGHT 18 19 20 21 22
+#define _CORNE_ALPHA_BOTTOM_LEFT 25 26 27 28 29
+#define _CORNE_ALPHA_BOTTOM_RIGHT 30 31 32 33 34
+#define _CORNE_EXTRA_LEFT 0 12 24
+#define _CORNE_EXTRA_RIGHT 11 23 35
+#define _CORNE_THUMB_LEFT 36 37 38
+#define _CORNE_THUMB_RIGHT 39 40 41
+
+#define MIRYOKU_HOME_MOD_LEFT_POSITIONS < \
+    _CORNE_EXTRA_LEFT \
+    _CORNE_EXTRA_RIGHT \
+    _CORNE_THUMB_LEFT \
+    _CORNE_THUMB_RIGHT \
+    _CORNE_ALPHA_TOP_LEFT \
+    _CORNE_ALPHA_MID_LEFT \
+    _CORNE_ALPHA_BOTTOM_LEFT >
+#define MIRYOKU_HOME_MOD_RIGHT_POSITIONS < \
+    _CORNE_EXTRA_LEFT \
+    _CORNE_EXTRA_RIGHT \
+    _CORNE_THUMB_LEFT \
+    _CORNE_THUMB_RIGHT \
+    _CORNE_ALPHA_TOP_RIGHT \
+    _CORNE_ALPHA_MID_RIGHT \
+    _CORNE_ALPHA_BOTTOM_RIGHT >
+
 // Move upper pinkie keys to outer pinkie keys
 #define MIRYOKU_LAYOUTMAPPING_CORNE( \
      K00, K01, K02, K03, K04,      K05, K06, K07, K08, K09, \
@@ -18,7 +50,7 @@ XXX  K20  K21  K22  K23  K24       K25  K26  K27  K28  K29  XXX \
 // Remove BUTTON layer from lower pinkie keys
 #define MIRYOKU_LAYER_BASE \
 &kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             &kp SQT,           \
-U_MT(LGUI, A),     U_MT(LALT, R),     U_MT(LCTRL, S),    U_MT(LSHFT, T),    &kp G,             &kp M,             U_MT(LSHFT, N),    U_MT(LCTRL, E),    U_MT(LALT, I),     U_MT(LGUI, O),     \
+LHM(LGUI, A),      LHM(LALT, R),      LHM(LCTRL, S),     LHM(LSHFT, T),     &kp G,             &kp M,             RHM(LSHFT, N),     RHM(LCTRL, E),     RHM(LALT, I),      RHM(LGUI, O),      \
 &kp  Z,            U_MT(RALT, X),     &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         U_MT(RALT, DOT),   &kp SLASH,         \
 U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPACE),U_LT(U_MOUSE, TAB),U_LT(U_SYM, RET),  U_LT(U_NUM, BSPC), U_LT(U_FUN, DEL),  U_NP,              U_NP
 
